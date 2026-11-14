@@ -1,0 +1,282 @@
+
+@import url('https://googleapis.com');
+* {
+        font-family: "JetBrains Mono", monospace;
+}
+
+@font-face {
+  font-family: "used-servers";
+  src: url("used_servers/Used Servers.ttf");
+
+}
+
+
+:root {
+    --primary_color: rgba(147, 51, 234, 1.0);
+  --accent: rgb(37, 99, 235);   /* Cobalt Blue */
+  --accent2: rgb(255, 107, 0);          /* Safety Orange */
+
+    --heading_font: "used-servers", sans-serif;
+    --heading_color: white;
+    --text_color: rgb(200, 200, 200);
+    --default_rounding: 16px;
+    --second_gray: rgb(53, 53, 53);
+    --border_color: rgb(150, 150, 150);
+    --bg_color: rgb(15,15,15);
+    --darkest: rgb(15,15,15);
+}
+
+img {
+    border-radius: var(--default_rounding);
+
+}
+
+main {
+  flex: 1;
+}
+
+body {
+        background-color: var(--bg_color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        );
+          min-height: 100vh;
+  margin: 0;
+
+    background-size: 40px 40px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;   /* Lock it in place relative to the screen */
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+    padding: 1rem;
+    border-radius: var(--default_rounding);
+}
+
+.logo {
+    color: var(--heading_color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    img {
+        width: 3dvw; height: 3dvw; 
+        border-radius: 50%;
+    }
+}
+
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+
+}
+
+.active {
+    color: var(--accent);
+}
+
+.navbar a {
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0px 20px 0px 20px;
+    &:hover {
+        color: var(--accent2)
+    }
+}
+
+.navbar a::before {
+    content: '';
+    left: 0;
+    top: 100%;
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--accent2);
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%
+} 
+
+.card {
+    border-style: solid;
+    padding: 1.5rem;
+    background-color: var(--second_gray);
+    border-radius: 12px;
+    overflow-wrap: break-word;
+    flex: 1;
+    border-width: 1px;
+    border-color: var(--border_color);
+
+}
+
+.btn {
+    z-index: 1;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid var(--border_color);
+    color: var(--text_color);
+    border-radius: 999999px;
+    overflow: hidden;
+    margin: 1rem;
+
+     &::after {
+        position: absolute;
+        content:'';
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--accent);
+        transition: all .35s;
+        z-index: -1;
+            overflow: hidden;
+     }
+
+&:hover:after{
+  width: 100%;
+}
+&:hover {
+            box-shadow: 0 0px 30px 0 var(--accent);
+}
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  h1, h2 {
+  color: var(--heading_color);
+
+  top: 75;
+  font-family: var(--heading_font) !important;
+      font-weight:500;
+text-transform: uppercase; /* Looks best in all-caps */}
+  h1 {
+    font-size: 10dvh;
+  }
+  h2 {
+    font-size: 7dvh;
+  }
+
+}
+
+.section-title {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+p, li {
+    font-size: 1.3rem;
+
+}
+p, button, li {
+    color: var(--text_color);
+}
+
+h1, h2, h3 {
+    color: var(--heading_color);
+}
+
+/* Base flex utility */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Direction modifiers */
+.row {
+  flex-direction: row; /* Optional, as 'row' is the default */
+}
+
+.col {
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+    padding: 5rem 10rem;
+    justify-content: space-evenly;
+    display: flex;
+    height: 40dvh;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+
+
+.orb {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.orb-blue {
+    background: var(--accent);
+    top: -100px;
+    left: -100px;
+}
+
+.orb-purple {
+    background: var(--accent2);
+    bottom: -100px;
+    right: -100px;
+}
+
+.member-card {
+    width: 200px;
+    height: 250px;
+    display: flex;
+      flex-direction: column;
+  align-items: center;
+    img {
+        width: 70%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+    }
+    &:hover {
+        border-color: var(--accent);
+    box-shadow: 0 0px 30px 0 var(--accent);}
+}
+
+.team-section {
+  display: flex;
+  align-items: stretch; /* Forces both children to match the tallest height */
+  gap: 1.5rem;          /* Optional spacing between the card and image */
+}
+
+.team-section img {
+  height: auto;         /* Overrides any fixed height */
+  object-fit: cover;    /* Prevents the image from looking squished or stretched */
+  min-height: 0;        /* Ensures proper flex shrinking/growing in all browsers */
+}
+
