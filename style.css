@@ -75,7 +75,7 @@ body {
     font-size: 40px;
     img {
         width: 3dvw; height: 3dvw; 
-        border-radius: 50%;
+        /* border-radius: 50%; */
     }
 }
 
@@ -84,7 +84,7 @@ body {
     gap: 1.5rem;
     padding: 1rem;
     border-radius: 12px;
-
+    background-color: black;
 }
 
 .active {
@@ -167,17 +167,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 500px;
+  justify-content: flex-start;
+  min-height: 500px;
   h1, h2 {
   color: var(--heading_color);
-
+padding-top: 10dvh;
   top: 75;
   font-family: var(--heading_font) !important;
       font-weight:500;
 text-transform: uppercase; /* Looks best in all-caps */}
   h1 {
     font-size: 10dvh;
+    margin-bottom: 0;
   }
   h2 {
     font-size: 7dvh;
@@ -280,3 +281,43 @@ section {
   min-height: 0;        /* Ensures proper flex shrinking/growing in all browsers */
 }
 
+@media (max-width: 700px) {
+  .header {
+    position: static;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .navbar a {
+    margin: 0 0.4rem;
+    font-size: 1rem;
+  }
+
+  .page-title {
+    height: 60vh;
+  }
+
+  .page-title h1 {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    text-align: center;
+  }
+
+  section {
+    height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
