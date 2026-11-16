@@ -1,0 +1,39 @@
+
+/* Base flex utility */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Direction modifiers */
+.row {
+  flex-direction: row; /* Optional, as 'row' is the default */
+}
+
+.col {
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+    padding: 5rem 10rem;
+    justify-content: space-evenly;
+    display: flex;
+    height: 40dvh;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+
+.team-section {
+  display: flex;
+  align-items: stretch; /* Forces both children to match the tallest height */
+  gap: 1.5rem;          /* Optional spacing between the card and image */
+}
+
+.team-section img {
+  height: auto;         /* Overrides any fixed height */
+  object-fit: cover;    /* Prevents the image from looking squished or stretched */
+  min-height: 0;        /* Ensures proper flex shrinking/growing in all browsers */
+}
