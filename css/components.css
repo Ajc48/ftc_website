@@ -25,7 +25,7 @@
     flex: 1;
     border-width: 1px;
     border-color: var(--border_color);
-    transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+    transition: box-shadow 180ms ease, border-color 180ms ease, transform 1500ms ease, background-color 180ms ease;
 
 }
 
@@ -138,28 +138,43 @@
     right: -100px;
 }
 
-#platinum:hover {
+#platinum {
     border-color: #a5f3fc;
     background: linear-gradient(135deg, rgba(165, 243, 252, 0.18), rgba(139, 92, 246, 0.16)), var(--second_gray);
+
+    &:hover {
+            transform: translateY(-6px) rotate(-2deg);
     box-shadow: 0 0 18px rgba(165, 243, 252, 0.75), 0 0 42px rgba(139, 92, 246, 0.5);
-    transform: translateY(-4px);
+    }
 }
 
-#gold:hover {
+#gold {
     border-color: #ffd700;
-    box-shadow: 0 0 30px #ffd700;
-        transform: translateY(-4px);
+
+
+            &:hover {
+                        transform: translateY(-6px) rotate(2deg);
+            box-shadow: 0 0 30px #ffd700;
+    }
 }
 
-#silver:hover {
+#silver {
     border-color: #c0c0c0;
-    box-shadow: 0 0 30px #c0c0c0;
-        transform: translateY(-4px);
+
+
+            &:hover {
+                        transform: translateY(-6px) rotate(-1.5deg);
+            box-shadow: 0 0 30px #c0c0c0;
+    }
 }
 
-#bronze:hover {
+#bronze {
     border-color: #cd7f32;
-    box-shadow: 0 0 30px #cd7f32;
-        transform: translateY(-4px);
+
+
+            &:hover {
+                        transform: translateY(-6px) rotate(1.5deg);
+            box-shadow: 0 0 30px #cd7f32;
+    }
 }
 
