@@ -19,7 +19,7 @@ section {
     padding: 5rem 10rem;
     justify-content: space-evenly;
     display: flex;
-    height: 40dvh;
+    min-height: 40dvh;
     flex-wrap: wrap;
     align-items: stretch;
     gap: 2rem;
